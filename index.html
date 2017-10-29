@@ -1,0 +1,76 @@
+<html>
+
+<head>
+
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+<div>
+	<label for="businessname">Business Name</label>
+	<input type="text" id="businessname"></input>
+
+</div>
+
+<div>
+
+	<label for="price">Price</label>
+	<input type="text" id="price"> </input>
+</div>
+
+<div>
+	<label for="streetlocation">Location</label>
+	<input type="text" id="streetlocation"> </input>
+</div>
+
+<button id="addbutton">Contribute</button>
+<a href="pricelist.html">View Price List</a>
+
+
+<script>
+	$("#addbutton").on("click",function(){
+		
+		var businessname = $("#businessname")[0].value;
+		var price = $("#price")[0].value;
+		var streetlocation = $("#streetlocation")[0].value;
+
+		if(localStorage.pricedata){
+
+			var data = JSON.parse(localStorage.pricedata);
+			data.push({
+
+				businessname:businessname, 
+				price:price,
+				streetlocation:streetlocation
+
+			});
+
+			localStorage.pricedata = JSON.stringify(data);
+
+
+		}else{
+
+			localStorage.pricedata = JSON.stringify([{
+
+				businessname:businessname, 
+				price:price,
+				streetlocation:streetlocation
+
+			}]);
+
+
+		}
+
+
+	});
+</script>
+
+</body>
+
+
+</html>

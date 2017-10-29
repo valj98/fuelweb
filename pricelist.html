@@ -1,0 +1,68 @@
+<html>
+
+<head>
+
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
+
+</head>
+
+
+<body>
+
+<section id="pricelistsection">
+
+<h1>Price List</h1>
+
+<div data-bind="foreach: contributions">
+	<span data-bind="text:businessname"></span>
+	<span data-bind="text:price"></span>
+	<span data-bind="text:streetname"></span>
+
+
+</div>
+
+</section>
+
+<a href="index.html">Go Back</a>
+
+<script>
+	var ContributionVieModel = function(businessname, price, streetname){
+
+		var self = this;
+		self.businessname = ko.observable(businessname);
+		self.price = ko.observable(price);
+		self.streetname = ko.observable(streetname); 
+
+	};
+
+	var PricelistViewModel = function(){
+
+		var self = this;
+		self.contributions = ko.observableArray();
+
+	};
+
+	var pricedata = JSON.parse(localStorage.pricedata);
+
+	var pricelist = new PricelistViewModel();
+
+	for(var i = 0; i < pricedata.length; i++){
+
+		var rawdata = pricedata[i];
+		var contribution = new ContributionVieModel(rawdata.businessname, rawdata.price, rawdata.streetlocation);
+		pricelist.contributions.push(contribution);
+
+	}
+
+    ko.applyBindings(pricelist, document.getElementById('pricelistsection'));
+
+</script>
+
+</body>
+
+</html>
