@@ -9,6 +9,22 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
 
+<style>
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid black;
+}
+
+tr:hover{background-color:#f5f5f5}
+
+</style>
+
 </head>
 
 
@@ -18,15 +34,66 @@
 
 <h1>Price List</h1>
 
-<div data-bind="foreach: contributions">
-	<span data-bind="text:businessname"></span>
-	<span data-bind="text:price"></span>
-	<span data-bind="text:streetname"></span>
+<table>
+
+  <tr>
+    <th>Business Name</th>
+    <th>Price</th>
+    <th>Location</th>
+  </tr>
 
 
-</div>
+<tr>			
+
+	<td>	
+
+		<div data-bind="foreach: contributions">
+
+			<br>
+			<span data-bind="text:businessname"></span>
+			</br>
+
+
+		</div>
+
+	</td>
+
+	<td>	
+
+		<div data-bind="foreach: contributions">
+
+		<br>
+			<a href="calculator.html"> <span data-bind="text:price"></span>
+			</a>
+		</br>
+
+		</div>
+
+
+	</td>
+
+	<td>
+
+		<div data-bind="foreach: contributions">
+
+		<br>
+			<span data-bind="text: streetname"></span>
+
+		</br>
+
+		</div>
+
+	</td>
+
+</tr>
+
+
+
+</table>
+
 
 </section>
+
 
 <a href="index.html">Go Back</a>
 
@@ -60,6 +127,16 @@
 	}
 
     ko.applyBindings(pricelist, document.getElementById('pricelistsection'));
+
+
+	$("#addbutton").on("click",function(){
+		
+
+		}
+
+
+	});
+
 
 </script>
 

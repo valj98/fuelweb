@@ -1,38 +1,62 @@
-<html>
-
-<head>
-
-<script
-  src="https://code.jquery.com/jquery-3.2.1.min.js"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous"></script>
-
+<html><head><title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+body,h1 {font-family: "Raleway", sans-serif}
+h1 {
+    color: white;
+    text-shadow: 3px 3px 5px #000000;
+}
+body, html {height: 100%}
+.bgimg {
+    background-image: url('https://cdn.pixabay.com/photo/2015/09/01/03/42/driving-916405_960_720.jpg');
+    min-height: 100%;
+    background-repeat:no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+</style>
 </head>
 
-<body>
 
-<div>
-	<label for="businessname">Business Name</label>
-	<input type="text" id="businessname"></input>
+
+<div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+  <div class="w3-display-topleft w3-padding-large w3-xlarge">
+    Fuel My Ride
+  </div>
+  <div class="w3-display-middle">
+    <h1 class="w3-xxlarge w3-animate-top"><div>
+	<label for="businessname">Business Name</label><br>
+	<input type="text" id="businessname">
 
 </div>
 
 <div>
 
-	<label for="price">Price</label>
-	<input type="text" id="price"> </input>
+	<label for="price">Price</label><br>
+	<input type="text" id="price"> 
 </div>
 
 <div>
-	<label for="streetlocation">Location</label>
-	<input type="text" id="streetlocation"> </input>
+	<label for="streetlocation">Location</label><br>
+	<input type="text" id="streetlocation"> 
 </div>
 
-<button id="addbutton">Contribute</button>
-<a href="pricelist.html">View Price List</a>
+
+    <p class="w3-large w3-middle"><button id="addbutton">Contribute</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="pricelist.html">View Price List</a></p></h1><p></p>
+  </div>
+</div>
 
 
-<script>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+
+
+	<script>
 	$("#addbutton").on("click",function(){
 		
 		var businessname = $("#businessname")[0].value;
@@ -70,7 +94,8 @@
 	});
 </script>
 
-</body>
 
 
-</html>
+
+
+</body></html>
