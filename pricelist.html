@@ -7,6 +7,9 @@
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   crossorigin="anonymous"></script>
 
+ <script 
+ 	src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.19.0/URI.min.js"></script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
 
 <style>
@@ -63,7 +66,8 @@ tr:hover{background-color:#f5f5f5}
 		<div data-bind="foreach: contributions">
 
 		<br>
-			<a href="calculator.html"> <span data-bind="text:price"></span>
+			<a href="calculator.html" data-bind="click: function (data) { localStorage.tempVal = data.price();
+			 return true;}"> <span data-bind="text:price"></span>
 			</a>
 		</br>
 
@@ -86,7 +90,6 @@ tr:hover{background-color:#f5f5f5}
 	</td>
 
 </tr>
-
 
 
 </table>
